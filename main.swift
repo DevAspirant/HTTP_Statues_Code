@@ -38,3 +38,15 @@ default:
     errorString += "please review and try again"
 }
 print(errorString)
+
+print("Switch with Range")
+
+var errorStringWithRange:String? // optional data type 
+
+switch HTTP_Statues_Code{
+case 400...500:
+    errorStringWithRange = "this is the switch with range"
+default:
+    print("Done")
+}
+print(errorStringWithRange)
