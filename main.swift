@@ -12,7 +12,9 @@ import Foundation
 var HTTP_Statues_Code: Int = 404
 var ErrorStirng: String
 
-// using switch 
+// using switch  
+
+print("---/ Normal switch /---")
 switch HTTP_Statues_Code {
 
 case 400:print("BAD REQUEST")
@@ -23,4 +25,16 @@ case 404:print("NOT FOUND")
 default: print("NONE")
 }
 
+print("---/ switch with multiple value /---")
 
+var errorString = "The Request failed with error:"
+
+switch HTTP_Statues_Code{
+
+case 400, 401,403,404:
+    errorString = "T​h​e​r​e​ ​w​a​s​ ​s​o​m​e​t​h​i​n​g​ ​w​r​o​n​g​ ​w​i​t​h​ ​t​h​e​ ​r​e​q​u​e​s​t​."; fallthrough
+    
+default:
+    errorString += "please review and try again"
+}
+print(errorString)
